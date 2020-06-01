@@ -41,7 +41,8 @@ class ParentController extends Controller
      */
     public function store(Request $request)
     {
-       
+        $childd= array_count_values($request->childs);
+       if(isset($childd[1])){
         // return  $request->all();
         $parent = new Parents;
     //   $lastinsertid=  $parent->create($request->all());
@@ -101,7 +102,7 @@ class ParentController extends Controller
 
         $parent->wife_ancestry = $request->get('wife_ancestry');
         $childd= array_count_values($request->childs);
-        
+
         $parent->no_male_child = $childd[1];
 
         $parent->no_female_child = $childd[2];
@@ -115,14 +116,16 @@ class ParentController extends Controller
         $parent->save();
 
         $lastinsertid = $parent->id;
-       
+    }
+    if(isset($childd[2])){
+
         $c=count($request->cname);
         if($c>0){
             for ($i=0; $i < $c ; $i++) {
                 $child = new Child;
-    
+
                 $child->name=  $request->cname[$i];
-    
+
                 $child->date_of_birth = date("Y-m-d",strtotime($request->date_of_cbirth[$i]));
                 $child->education = $request->education[$i];
                 $child->marital_status = $request->marital_status[$i];
@@ -132,7 +135,7 @@ class ParentController extends Controller
                 # code...
             }
         }
-        
+    }
 
        // echo $lastinsertid;
 
