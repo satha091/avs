@@ -20,7 +20,7 @@
             <th>Wife Name</th>
             <th>No Male Child</th>
             <th>No Female Child</th>
-            <th>Action</th>
+            {{-- <th>Action</th> --}}
             <th>Edit</th>
         </thead>
         <tbody>
@@ -42,7 +42,7 @@
                 <td>{{ $list->wife_name }}</td>
                 <td>{{ $list->no_male_child }}</td>
                 <td>{{ $list->no_female_child }}</td>
-                <td><a href="">Show Details</a></td>
+                {{-- <td><a href="">Show Details</a></td> --}}
                <!-- <td><a href="{{ url('parents/1/edit') }}">Edit</a></td>-->
                 <td><a href="{{ route('parents.edit',['id'=>$list->id]) }}">Edit</a></td>
 

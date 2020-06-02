@@ -8,7 +8,7 @@
                     <div class="col-sm-12 card-header" style="background-color:#820101;">
                         <h4 class="header-title mt-3 m-b-20 text-white">Update Address Form / புதிய முகவரி மலர்</h4>
                     </div>
-
+{{--
                     @if(session()->has('uid'))
                     <div class="col-12 m-1">
                     <div class="alert alert-success alert-dismissible" id="mes" style="margin-top:20px;">
@@ -20,7 +20,7 @@
 
                     </div>
                 </div>
-                    @endif
+                    @endif --}}
 
                     {{-- @if (session()->has('success'))
                     <div class="col-12 m-2">
@@ -313,254 +313,7 @@
                                 <div class="col-12">
 
 
-                           <div class="row card-box">
 
-                                    {{-- <div class="col-md-5">
-                                        <div class="form-group row">
-                                                <div class="form-check form-check-inline">
-                                                    <h4>(1)&nbsp;&nbsp;</h4>
-                                                    <label class="form-check-label">
-                                                      <input type="radio" class="form-check-input mt-1" name="child1" value="son"> Son / மகன்
-                                                    </label>
-                                                  </div>
-                                                  <div class="form-check form-check-inline">
-                                                    <label class="form-check-label">
-                                                      <input type="radio" class="form-check-input mt-1" name="child1" value="daughter">Daughter / மகள்
-                                                    </label>
-                                                  </div>
-                                         </div>
-                                         <div class="form-group">
-                                            <label>Name / பெயர் </label><span class="text-danger"></span>
-
-                                            <input type="text" name="name1" class="form-control tamil" value=""  placeholder="பெயர்" >
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="child1_dob">Date of Birth / பிறந்த தேதி </label><span class="text-danger"></span>
-
-                                            <input type="text" name="date_of_birth1" class="form-control tamil datepicker " value="" placeholder="மா/நா/வரு" >
-
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="education">Education / படிப்பு</label><span class="text-danger"></span>
-
-                                            <input type="text" name="education" class="form-control tamil " value="" placeholder="படிப்பு" >
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="child1_marrige">Married Details / திருமண விபரம்</label><span class="text-danger"></span>
-
-                                             <select name="marital_status1" id="marital_status"  class="form-control select2 tamil" >
-                                                <option value="">Select</option>
-                                                <option value="1">Married</option>
-                                                <option value="2">Unmarried</option>
-
-
-
-                                                </select>
-
-
-
-                                          </div>
-
-
-
-                                          <div class="form-group row">
-                                            <div class="form-check form-check-inline">
-                                                <h4>(3)&nbsp;&nbsp;</h4>
-                                                <label class="form-check-label">
-                                                  <input type="radio" class="form-check-input mt-1" name="child3" value="son"> Son / மகன்
-                                                </label>
-                                              </div>
-                                              <div class="form-check form-check-inline">
-                                                <label class="form-check-label">
-                                                  <input type="radio" class="form-check-input mt-1" name="child3" value="daughter">Daughter / மகள்
-                                                </label>
-                                              </div>
-                                     </div>
-                                     <div class="form-group">
-                                        <label>Name / பெயர் </label><span class="text-danger"></span>
-
-                                        <input type="text" name="name3" class="form-control tamil" value=""  placeholder="பெயர்" >
-
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="child1_dob">Date of Birth / பிறந்த தேதி </label><span class="text-danger"></span>
-
-                                        <input type="text" name="date_of_birth3" class="form-control tamil datepicker " value="" placeholder="மா/நா/வரு" >
-
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="education">Education / படிப்பு</label><span class="text-danger"></span>
-
-                                        <input type="text" name="education3" class="form-control tamil " value="" placeholder="படிப்பு" >
-
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="child3_marrige">Married Details / திருமண விபரம்</label><span class="text-danger"></span>
-
-                                         <select name="marital_status3" id="marital_status"  class="form-control select2 tamil" >
-                                            <option value="">Select</option>
-                                            <option value="1">Married</option>
-                                            <option value="2">Unmarried</option>
-
-
-
-                                            </select>
-
-
-
-                                      </div>
-
-
-
-
-
-
-
-
-
-
-                                    </div>
-                              <div class="col-md-1"></div>
-
-                               <div class="col-md-5">
-
-                                <div class="form-group row">
-                                    <div class="form-check form-check-inline">
-                                        <h4>(2)&nbsp;&nbsp;</h4>
-                                        <label class="form-check-label">
-                                          <input type="radio" class="form-check-input mt-1" name="child2" value="son"> Son / மகன்
-                                        </label>
-                                      </div>
-                                      <div class="form-check form-check-inline">
-                                        <label class="form-check-label">
-                                          <input type="radio" class="form-check-input mt-1" name="child2" value="daughter">Daughter / மகள்
-                                        </label>
-                                      </div>
-                             </div>
-                             <div class="form-group">
-                                <label>Name / பெயர் </label><span class="text-danger"></span>
-
-                                <input type="text" name="name2" class="form-control tamil" value=""  placeholder="பெயர்" >
-
-                            </div>
-                            <div class="form-group">
-                                <label for="child1_dob">Date of Birth / பிறந்த தேதி </label><span class="text-danger"></span>
-
-                                <input type="text" name="date_of_birth2" class="form-control tamil datepicker " value="" placeholder="மா/நா/வரு" >
-
-                            </div>
-
-                            <div class="form-group">
-                                <label for="education">Education / படிப்பு</label><span class="text-danger"></span>
-
-                                <input type="text" name="education2" class="form-control tamil " value="" placeholder="படிப்பு" >
-
-                            </div>
-                            <div class="form-group">
-                                <label for="child1_marrige">Married Details / திருமண விபரம்</label><span class="text-danger"></span>
-
-                                 <select name="marital_status2" id="marital_status"  class="form-control select2 tamil" >
-                                    <option value="">Select</option>
-                                    <option value="1">Married</option>
-                                    <option value="2">Unmarried</option>
-
-
-
-                                    </select>
-
-
-
-                              </div>
-
-
-                              <div class="form-group row">
-                                <div class="form-check form-check-inline">
-                                    <h4>(4)&nbsp;&nbsp;</h4>
-                                    <label class="form-check-label">
-                                      <input type="radio" class="form-check-input mt-1" name="child4" value="son"> Son / மகன்
-                                    </label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <label class="form-check-label">
-                                      <input type="radio" class="form-check-input mt-1" name="child4" value="daughter">Daughter / மகள்
-                                    </label>
-                                  </div>
-                         </div>
-                         <div class="form-group">
-                            <label>Name / பெயர் </label><span class="text-danger"></span>
-
-                            <input type="text" name="name4" class="form-control tamil" value=""  placeholder="பெயர்" >
-
-                        </div>
-                        <div class="form-group">
-                            <label for="child4_dob">Date of Birth / பிறந்த தேதி </label><span class="text-danger"></span>
-
-                            <input type="text" name="date_of_birth4" class="form-control tamil datepicker " value="" placeholder="மா/நா/வரு" >
-
-                        </div>
-
-                        <div class="form-group">
-                            <label for="education">Education / படிப்பு</label><span class="text-danger"></span>
-
-                            <input type="text" name="education4" class="form-control tamil " value="" placeholder="படிப்பு" >
-
-                        </div>
-                        <div class="form-group">
-                            <label for="child4_marrige">Married Details / திருமண விபரம்</label><span class="text-danger"></span>
-
-                             <select name="marital_status4" id="marital_status"  class="form-control select2 tamil" >
-                                <option value="">Select</option>
-                                <option value="1">Married</option>
-                                <option value="2">Unmarried</option>
-
-
-
-                                </select>
-
-
-
-                          </div> --}}
-
-                          <div id="dynamic" style="width: 100%">
-                          <h6 class="col-md-offset-6 " style="text-align: center">  குழந்தைகள் விபரம்</h6>
-                            <table class="table table-bordered table-striped col-md-12"  id="user_table">
-                                <thead>
-                                 <tr>
-                                     <th> Name</th>
-                                     <th>Date Of Birth</th>
-                                     <th> Education</th>
-                                     <th>Married Details</th>
-                                     <th>
-        Childs
-
-                                     </th>
-
-                                     <th >Action</th>
-                                 </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                                <tfoot>
-                                 <tr>
-                                                 {{-- <td colspan="2" align="right">&nbsp;</td> --}}
-
-                                 </tr>
-                                </tfoot>
-                            </table>
-                          </div>
-
-
-
-
-
-
-
-                               </div>
                            </div>
 
                                <div class="row card-box col-md-12">
@@ -575,46 +328,7 @@
                         </form>
                 </div>
 
-                <script>
-                    $(document).ready(function(){
 
-                     var count = 1;
-
-                     dynamic_field(count);
-
-                     function dynamic_field(number)
-                     {
-                      html = '<tr>';
-                            html += '<td><input type="text" name="cname[]" class="form-control" /></td>';
-                            html += '<td><input type="date" name="date_of_cbirth[]" class="form-control" /></td>';
-                            html += '<td><input type="text" name="education[]" class="form-control" /></td>';
-                            html += '<td><select  type="text" name="marital_status[]" class="form-control" ><option>Select</option><option value="1">Married </option><option value="2">Un Married </option>  </select></td>';
-                            html += '<td><select  type="text" name="childs[]" class="form-control" ><option>Select</option><option value="1">ஆண்</option><option value="2">பெண் </option>  </select></td>';
-                            if(number > 1)
-                            {
-                                html += '<td><button type="button" name="remove" id="" class="btn btn-danger remove">Remove</button></td></tr>';
-                                $('#dynamic tbody').append(html);
-                            }
-                            else
-                            {
-                                html += '<td><button type="button" name="add" id="add" class="btn btn-success">Add</button></td></tr>';
-                                $('#dynamic tbody').html(html);
-                            }
-                     }
-
-                     $(document).on('click', '#add', function(){
-                      count++;
-                      dynamic_field(count);
-                     });
-
-                     $(document).on('click', '.remove', function(){
-                      count--;
-                      $(this).closest("tr").remove();
-                     });
-
-
-                    });
-                    </script>
                         <!-- end row -->
 
         @endsection

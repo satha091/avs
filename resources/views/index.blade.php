@@ -522,7 +522,7 @@
                           </div> --}}
 
                           <div id="dynamic" style="width: 100%">
-                          <h6 class="col-md-offset-6 " style="text-align: center">  குழந்தைகள் விபரம்</h6>
+                          <h3 class="col-md-offset-5">  குழந்தைகள் விபரம்</h3>
                             <table class="table table-bordered table-striped col-md-12"  id="user_table">
                                 <thead>
                                  <tr>

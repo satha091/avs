@@ -68,6 +68,8 @@ class ParentController extends Controller
 
         $parent->native_place = $request->get('native_place');
 
+        $parent->district = $request->get('district');
+
 
         $parent->ancestry = $request->get('ancestry');
 
@@ -280,8 +282,91 @@ class ParentController extends Controller
      */
     public function update(Request $request, $id)
     {
+       // $parent = new Parents;
+         $parents= Parents::find($id);
+        // dd($parents);exit;
+       $parents->name = $request->name;
 
-        //
+       $parents->father_name = $request->father_name;
+
+        $parents->date_of_birth =$request->date_of_birth;
+
+        $parents->age = $request->age;
+
+        $parents->blood_group = $request->blood_group;
+
+        if($request->hasFile('photo'))
+        {
+
+        $imagename = time().'.'.$request->photo->getClientOriginalExtension();
+        $parents->photo = $imagename;
+        $request->photo->move(public_path('images'), $imagename);
+        }
+
+        $parents->native_place = $request->native_place;
+
+        $parents->district = $request->district;
+
+
+        $parents->ancestry = $request->ancestry;
+
+        $parents->address = $request->address;
+
+        $parents->telephone = $request->telephone;
+
+        $parents->cell_no = $request->cellno;
+
+        $parents->email = $request->email;
+
+        $parents->job_details = $request->job_details;
+
+        $parents->job_description = $request->job_description;
+
+        $parents->designation = $request->designation;
+
+        $parents->company_name = $request->company_name;
+
+        $parents->company_address = $request->address;
+
+        $parents->company_telephone = $request->company_telephone;
+
+        $parents->company_cell_no = $request->company_cellno;
+
+        $parents->company_email = $request->company_email;
+
+        $parents->qualification = $request->qualification;
+
+        $parents->wife_name = $request->wife_name;
+
+        $parents->wife_native_place = $request->wife_native_place;
+
+        $parents->wife_ancestry = $request->wife_ancestry;
+        // $childd= array_count_values($request->childs);
+        // if(isset($childd[1])){
+        //     $parents->no_male_child = $childd[1];
+        // }else{
+        //     $parents->no_male_child = 0;
+        // }
+        // if(isset($childd[2])){
+        //     $parents->no_female_child = $childd[2];
+        // }else{
+        //     $parents->no_female_child = 0;
+        // }
+
+
+
+
+        $parents->uid = "AVS_". $request->district."_".strtoupper(uniqid());
+
+        $parents->created_by = 1;
+
+        $parents->updated_by = 1;
+
+        $parents->save();
+return redirect()->back();
+       // $lastinsertid = $parents->id;
+
+
     }
 
     /**

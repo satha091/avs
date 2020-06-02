@@ -23,6 +23,7 @@ class CreateParentsTable extends Migration
             $table->string('blood_group',50);
             $table->string('photo',500);
             $table->string('native_place',500);
+            $table->text('district',500);
             $table->string('ancestry',500);
             $table->text('address');
             $table->string('telephone',100);

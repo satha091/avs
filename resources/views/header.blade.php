@@ -7,40 +7,40 @@
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
+        {{-- {{ url('img/logo.png') }} --}}
        <!-- App favicon -->
-        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="shortcut icon" href="{{url('images/favicon.ico')}}">
 
         <!-- Plugins css-->
          <link href='plugins/jquery-ui/jquery-ui.min.css' rel='stylesheet' type='text/css'>
         <script src='plugins/jquery-ui/jquery-ui.min.js' type='text/javascript'></script>
-        <link href="plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css" rel="stylesheet" />
-        <link rel="stylesheet" href="plugins/switchery/switchery.min.css">
-        <link href="plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
-        <link href="plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
-        <link href="plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
-        <link href="plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
-        <link href="plugins/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
-        <link href="plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
+        <link href="{{ url('plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css')}}" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ url('plugins/switchery/switchery.min.css')}}">
+        <link href="{{ url('plugins/select2/css/select2.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{ url('plugins/timepicker/bootstrap-timepicker.min.css')}}" rel="stylesheet">
+        <link href="{{ url('plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css')}}" rel="stylesheet">
+        <link href="{{ url('plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css')}}" rel="stylesheet">
+        <link href="{{ url('plugins/clockpicker/css/bootstrap-clockpicker.min.css')}}" rel="stylesheet">
+        <link href="{{ url('plugins/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href=" https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css">
        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.bootstrap.min.css">
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <!-- Summernote css -->
-        <link href="plugins/summernote/summernote-bs4.css" rel="stylesheet" />
+        <link href="{{ url('plugins/summernote/summernote-bs4.css')}}" rel="stylesheet" />
 
         <!-- App css -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="css/icons.css" rel="stylesheet" type="text/css" />
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="{{ url('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{ url('css/icons.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{ url('css/style.css')}}" rel="stylesheet" type="text/css" />
 
         <script src="js/modernizr.min.js"></script>
 
         <!--tamil fonts js-->
-    <script language=JavaScript src="js/common.js"></script>
+    <script language=JavaScript src="{{ url('js/common.js')}}"></script>
     <!--<script language=JavaScript src="js/tamil.js"></script>-->
-     <script language=JavaScript src="js/jquery-2.1.1.min.js"></script>
+     <script language=JavaScript src="{{ url('js/jquery-2.1.1.min.js')}}"></script>
 
 
     <!--<script>-->
@@ -269,7 +269,7 @@
                             <li class="dropdown notification-list">
                                 <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                                    aria-haspopup="false" aria-expanded="false">
-                                    <img src="images/users/avatar-1.jpg" alt="user" class="rounded-circle"> <span class="ml-1 pro-user-name">Anderson <i class="mdi mdi-chevron-down"></i> </span>
+                                    <img src="{{ url('images/users/avatar-1.jpg')}}" alt="user" class="rounded-circle"> <span class="ml-1 pro-user-name">Anderson <i class="mdi mdi-chevron-down"></i> </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                     <!-- item-->
