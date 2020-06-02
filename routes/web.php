@@ -23,3 +23,10 @@ Route::post('/parent/store', 'ParentController@store');
 Route::get('/lists', 'ParentController@index');
 
 
+Route::get('/parents/{id}/edit', 'ParentController@edit')->name('parents.edit');
+Route::put('/parents/{id}', 'ParentController@update')->name('parents.update');
+
+
+
+
+

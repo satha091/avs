@@ -83,7 +83,7 @@
                         <!-- Image Logo -->
 
                         <a href="{{ url('/') }}" class="logo pull-left">
-                            <img src="{{ url('images/logo1.jpeg') }}" height="100px" width="100px">
+                            <img src="{{ url('images/logo1.jpeg') }}" height="100px" width="100px" style="margin-top: 15px">
                             {{-- <img src="images/logo_sm.png" alt="" height="26" class="logo-small"> --}}
                             {{-- <img src="images/logo.png" alt="" height="126" class="logo-large pull-left"> --}}
 

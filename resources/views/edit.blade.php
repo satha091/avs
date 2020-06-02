@@ -6,7 +6,7 @@
 
                 <div class="row">
                     <div class="col-sm-12 card-header" style="background-color:#820101;">
-                        <h4 class="header-title mt-3 m-b-20 text-white">Add Address Form / புதிய முகவரி மலர்</h4>
+                        <h4 class="header-title mt-3 m-b-20 text-white">Update Address Form / புதிய முகவரி மலர்</h4>
                     </div>
 
                     @if(session()->has('uid'))
@@ -44,22 +44,26 @@
 
                 <div class="row card-box ">
 
-                    <form id="dyn" class="form-horizontal form-validation" role="form" action="{{ url('parent/store') }}" method="post" enctype="multipart/form-data">
+                    <form id="dyn" class="form-horizontal form-validation" role="form" action="{{ route('parents.update',['id'=>$parents->id]) }}" method="post" enctype="multipart/form-data">
+
+                        @method('put')
+                        @csrf
+
                      <div class="row">
 
                          <div class="col-md-5">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+                            {{-- <input type="hidden" name="_token" value="{{ csrf_token() }}"/> --}}
                             <div class="form-group">
                                 <label>Name / பெயர் </label><span class="text-danger">*</span>
 
-                                <input type="text" name="name" class="form-control tamil" value=""  placeholder="பெயர்" required>
+                            <input type="text" name="name" class="form-control tamil" value="{{$parents->name}}"  placeholder="பெயர்" required>
 
                             </div>
 
                             <div class="form-group">
                                 <label for="date_of_birth">Date of Birth / பிறந்த தேதி </label><span class="text-danger">*</span>
 
-                                <input type="date" name="date_of_birth" class="form-control tamil  " value="" placeholder="மா/நா/வரு" required>
+                                <input type="date" name="date_of_birth" class="form-control tamil  " value="{{$parents->date_of_birth}}" placeholder="மா/நா/வரு" required>
 
                             </div>
 
@@ -67,7 +71,7 @@
                             <div class="form-group">
                                 <label for="blood_group">Blood Group / இரத்த வகை </label><span class="text-danger">*</span>
 
-                                <input type="text" name="blood_group" class="form-control" value="" placeholder="இரத்த வகை" required>
+                                <input type="text" name="blood_group" class="form-control" value="{{$parents->blood_group}}" placeholder="இரத்த வகை" required>
 
                             </div>
 
@@ -76,7 +80,7 @@
                             <div class="form-group">
                                 <label for="native_place">Native Place / பூர்விக ஊர் </label><span class="text-danger">*</span>
 
-                                <input type="text" name="native_place" class="form-control" value="" placeholder="பூர்விக ஊர்" required>
+                                <input type="text" name="native_place" class="form-control" value="{{$parents->native_place}}" placeholder="பூர்விக ஊர்" required>
 
                             </div>
                             <div class="form-group">
@@ -130,7 +134,7 @@
                             <div class="form-group">
                                 <label for="telephone">Telephone / தொலைபேசி </label><span class="text-danger">*</span>
 
-                                <input type="text" name="telephone" class="form-control tamil " value="" placeholder="தொலைபேசி" required>
+                                <input type="text" name="telephone" class="form-control tamil " value="{{$parents->telephone}}" placeholder="தொலைபேசி" required>
 
                             </div>
 
@@ -138,44 +142,44 @@
                             <div class="form-group">
                                 <label for="email">Email Id / மின்னஞ்சல் </label><span class="text-danger">*</span>
 
-                                <input type="email" name="email" class="form-control tamil " value="" placeholder="மின்னஞ்சல்" required>
+                                <input type="email" name="email" class="form-control tamil " value="{{$parents->email}}" placeholder="மின்னஞ்சல்" required>
 
                             </div>
 
                               <div class="form-group">
                                 <label for="description">Job Description / பணி புரியும் விபரம்</label>
 
-                                <input type="text" name="job_description" class="form-control tamil "  placeholder="பதவி பெயர்">
+                                <input type="text" name="job_description" class="form-control tamil"  value="{{$parents->job_description}}" placeholder="பதவி பெயர்">
 
                             </div>
                             <div class="form-group">
                                 <label for="company_name">Company Name / நிறுவனத்தின் பெயர் </label><span class="text-danger">*</span>
 
-                                <input type="text" name="company_name" class="form-control tamil "  placeholder="நிறுவனத்தின் பெயர்" required>
+                                <input type="text" name="company_name" class="form-control tamil" value="{{$parents->company_name}}" placeholder="நிறுவனத்தின் பெயர்" required>
 
                             </div>
                             <div class="form-group">
                                 <label for="company_telephone">Telephone / தொலைபேசி </label><span class="text-danger">*</span>
 
-                                <input type="text" name="company_telephone" class="form-control tamil " value="" placeholder="தொலைபேசி" required>
+                                <input type="text" name="company_telephone" class="form-control tamil " value="{{$parents->company_telephone}}" placeholder="தொலைபேசி" required>
 
                             </div>
                             <div class="form-group">
                                 <label for="company_email">Email Id / மின்னஞ்சல் </label><span class="text-danger">*</span>
 
-                                <input type="email" name="company_email" class="form-control tamil " value="" placeholder="மின்னஞ்சல்" required>
+                                <input type="email" name="company_email" class="form-control tamil " value="{{$parents->company_email}}" placeholder="மின்னஞ்சல்" required>
 
                             </div>
                             <div class="form-group">
                                 <label for="wife_name">Wife's Name / மனைவி பெயர் </label><span class="text-danger"></span>
 
-                                <input type="text" name="wife_name" class="form-control tamil" value=""  placeholder="மனைவி பெயர்" >
+                                <input type="text" name="wife_name" class="form-control tamil" value="{{$parents->wife_name}}"  placeholder="மனைவி பெயர்" >
 
                             </div>
                             <div class="form-group">
                                 <label for="wife_ancestry">மனைவி கோத்திரம் </label>
 
-                                <input type="text" name="wife_ancestry" class="form-control tamil " value="" placeholder="மனைவி கோத்திரம்">
+                                <input type="text" name="wife_ancestry" class="form-control tamil " value="{{$parents->wife_ancestry}}" placeholder="மனைவி கோத்திரம்">
 
                             </div>
 
@@ -185,13 +189,13 @@
                         <div class="form-group">
                             <label for="father_name">Father's Name / தந்தை பெயர் :</label><span class="text-danger">*</span>
 
-                            <input type="text" name="father_name" class="form-control tamil" value="" placeholder="தந்தை பெயர்" required title="Please enter at least 5 characters">
+                            <input type="text" name="father_name" class="form-control tamil" value="{{$parents->father_name}}" placeholder="தந்தை பெயர்" required title="Please enter at least 5 characters">
 
                         </div>
                         <div class="form-group">
                             <label for="age">Age / வயது </label><span class="text-danger">*</span>
 
-                            <input type="text" name="age" class="form-control" value="" placeholder="வயது" required>
+                            <input type="text" name="age" class="form-control" value="{{$parents->age}}" placeholder="வயது" required>
 
                         </div>
 
@@ -205,20 +209,20 @@
                         <div class="form-group">
                             <label for="ancestry">கோத்திரம் </label><span class="text-danger">*</span>
 
-                            <input type="text" name="ancestry" class="form-control tamil " value="" placeholder="கோத்திரம்" required>
+                            <input type="text" name="ancestry" class="form-control tamil " value="{{$parents->ancestry}}" placeholder="கோத்திரம்" required>
 
                         </div>
                         <div class="form-group">
                             <label for="address">Address / இருப்பிடம் - விலாசம் </label><span class="text-danger">*</span>
 
-                            <textarea name="address" class="form-control tamil" rows="1" style="min-height: 0px" required></textarea>
+                            <textarea name="address" class="form-control tamil" rows="1" style="min-height: 0px" required> {{$parents->address}}</textarea>
 
 
                         </div>
                         <div class="form-group">
                             <label for="cellno">Cell / செல் </label><span class="text-danger">*</span>
 
-                            <input type="number" name="cellno" class="form-control tamil " value="" placeholder="செல்" required>
+                            <input type="number" name="cellno" class="form-control tamil " value="{{$parents->cellno}}" placeholder="செல்" required>
 
                         </div>
                         <div class="form-group">
@@ -239,14 +243,14 @@
                              <div class="form-group">
                                 <label for="designation">Designation / பதவி பெயர்</label><span class="text-danger">*</span>
 
-                                <input type="text" name="designation" class="form-control tamil "  placeholder="பதவி பெயர்" required>
+                                <input type="text" name="designation" class="form-control tamil" value="{{$parents->designation}}"  placeholder="பதவி பெயர்" required>
 
                             </div>
 
                             <div class="form-group">
                                 <label for="company_address">Company Address / நிறுவன விலாசம் </label><span class="text-danger">*</span>
 
-                                <textarea name="company_address" class="form-control tamil" rows="1" style="min-height: 0px" required></textarea>
+                                <textarea name="company_address" class="form-control tamil" rows="1" style="min-height: 0px" required>{{$parents->company_address}}</textarea>
 
 
                             </div>
@@ -255,14 +259,14 @@
                             <div class="form-group">
                                 <label for="company_cellno">Cell / செல் </label><span class="text-danger">*</span>
 
-                                <input type="number" name="company_cellno" class="form-control tamil " value="" placeholder="செல்" required>
+                                <input type="number" name="company_cellno" class="form-control tamil " value="{{$parents->company_cellno}}" placeholder="செல்" required>
 
                             </div>
 
                             <div class="form-group">
                                 <label for="company_cellno">Qualification / தனிதகுதி </label>
 
-                                <input type="number" name="qualification" class="form-control tamil " value="" placeholder=" தனிதகுதி" >
+                                <input type="number" name="qualification" class="form-control tamil " value="{{$parents->qualification}}" placeholder=" தனிதகுதி" >
 
                             </div>
 
@@ -271,7 +275,7 @@
                             <div class="form-group">
                                 <label for="wife_native_place">Wife Native Place / மனைவி பூர்விக ஊர் </label><span class="text-danger"></span>
 
-                                <input type="text" name="wife_native_place" class="form-control" value="" placeholder="மனைவி பூர்விக ஊர்" >
+                                <input type="text" name="wife_native_place" class="form-control" value="{{$parents->wife_native_place}}" placeholder="மனைவி பூர்விக ஊர்" >
 
                             </div>
 

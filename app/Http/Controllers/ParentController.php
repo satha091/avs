@@ -45,7 +45,8 @@ class ParentController extends Controller
     {
         // return  $request->all();
         $parent = new Parents;
-    //   $lastinsertid=  $parent->create($request->all());
+    //    $lastinsertid=  $parent->create($request->all());
+    //    return $lastinsertid;
     //   return $request->name;;
         $parent->name = $request->name;
 
@@ -265,6 +266,8 @@ class ParentController extends Controller
      */
     public function edit($id)
     {
+        $parents= Parents::find($id);
+        return view('edit',['parents'=>$parents]);
         //
     }
 
@@ -277,6 +280,7 @@ class ParentController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         //
     }
 
