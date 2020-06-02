@@ -14,7 +14,7 @@
                     <div class="alert alert-success alert-dismissible" id="mes" style="margin-top:20px;">
 
                     <button type="button" class="close" data-dismiss="alert" onclick="javascript:document.getElementById('mes').style.display = 'none';">x</button>
-                    You have successfully created address form. Your id is <b>{{ session()->get('uid') }}</b>
+                    You have successfully registered. Your registration id is <b>{{ session()->get('uid') }}</b>
 
 
 
@@ -155,13 +155,13 @@
 
                             </div>
                             <div class="form-group">
-                                <label for="company_telephone">Telephone / தொலைபேசி </label><span class="text-danger">*</span>
+                                <label for="company_telephone">CompanyTelephone / தொலைபேசி </label><span class="text-danger">*</span>
 
                                 <input type="text" name="company_telephone" class="form-control tamil " value="" placeholder="தொலைபேசி" required>
 
                             </div>
                             <div class="form-group">
-                                <label for="company_email">Email Id / மின்னஞ்சல் </label><span class="text-danger">*</span>
+                                <label for="company_email">Company Email Id / மின்னஞ்சல் </label><span class="text-danger">*</span>
 
                                 <input type="email" name="company_email" class="form-control tamil " value="" placeholder="மின்னஞ்சல்" required>
 
@@ -253,16 +253,16 @@
 
 
                             <div class="form-group">
-                                <label for="company_cellno">Cell / செல் </label><span class="text-danger">*</span>
+                                <label for="company_cellno">Company Cell / செல் </label><span class="text-danger">*</span>
 
                                 <input type="number" name="company_cellno" class="form-control tamil " value="" placeholder="செல்" required>
 
                             </div>
 
                             <div class="form-group">
-                                <label for="company_cellno">Qualification / தனிதகுதி </label>
+                                <label for="company_cellno">Qualification / தனிதகுதி </label><span class="text-danger">*</span>
 
-                                <input type="number" name="qualification" class="form-control tamil " value="" placeholder=" தனிதகுதி" >
+                                <input type="text" name="qualification" class="form-control tamil " value="" placeholder=" தனிதகுதி" required >
 
                             </div>
 

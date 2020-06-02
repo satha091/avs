@@ -27,7 +27,7 @@ class CreateParentsTable extends Migration
             $table->string('ancestry',500);
             $table->text('address');
             $table->string('telephone',100);
-            $table->integer('cell_no');
+            $table->string('cell_no');
             $table->string('email',500)->unique();
             $table->string('job_details',500);
             $table->string('job_description',500);
@@ -35,7 +35,7 @@ class CreateParentsTable extends Migration
             $table->string('company_name',500);
             $table->text('company_address');
             $table->string('company_telephone',100);
-            $table->integer('company_cell_no');
+            $table->string('company_cell_no');
             $table->string('company_email',500);
             $table->string('qualification',500);
             $table->string('wife_name',500);
