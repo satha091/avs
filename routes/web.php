@@ -20,4 +20,6 @@ Route::get('/', function () {
 
 Route::post('/parent/store', 'ParentController@store');
 
+Route::get('/lists', 'ParentController@index');
+
 

@@ -1,5 +1,8 @@
 @extends('layout')
 @section('content')
+<div class="row">
+    <a class="btn-primary primary-info p-20 m-b-5  " href="{{  url('lists') }} ">View List</a>
+</div>
 
                 <div class="row">
                     <div class="col-sm-12 card-header" style="background-color:#820101;">
@@ -541,7 +544,7 @@
                                 <tfoot>
                                  <tr>
                                                  {{-- <td colspan="2" align="right">&nbsp;</td> --}}
-                                                 
+
                                  </tr>
                                 </tfoot>
                             </table>
@@ -581,8 +584,8 @@
                             html += '<td><input type="text" name="cname[]" class="form-control" /></td>';
                             html += '<td><input type="date" name="date_of_cbirth[]" class="form-control" /></td>';
                             html += '<td><input type="text" name="education[]" class="form-control" /></td>';
-                            html += '<td><select  type="text" name="marital_status[]" class="form-control" ><option value="1">Married </option><option value="2">Un Married </option>  </select></td>';
-                            html += '<td><select  type="text" name="childs[]" class="form-control" ><option value="1">ஆண்</option><option value="2">பெண் </option>  </select></td>';
+                            html += '<td><select  type="text" name="marital_status[]" class="form-control" ><option>Select</option><option value="1">Married </option><option value="2">Un Married </option>  </select></td>';
+                            html += '<td><select  type="text" name="childs[]" class="form-control" ><option>Select</option><option value="1">ஆண்</option><option value="2">பெண் </option>  </select></td>';
                             if(number > 1)
                             {
                                 html += '<td><button type="button" name="remove" id="" class="btn btn-danger remove">Remove</button></td></tr>';

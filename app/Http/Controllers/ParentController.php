@@ -20,7 +20,9 @@ class ParentController extends Controller
      */
     public function index()
     {
-        $address_forms = Parent::all();
+        $address_forms = Parents::all();
+        return view('lists',['lists'=>$address_forms]);
+        // return $address_forms;
     }
 
     /**
@@ -41,7 +43,7 @@ class ParentController extends Controller
      */
     public function store(Request $request)
     {
-       
+
         // return  $request->all();
         $parent = new Parents;
     //   $lastinsertid=  $parent->create($request->all());
@@ -101,10 +103,19 @@ class ParentController extends Controller
 
         $parent->wife_ancestry = $request->get('wife_ancestry');
         $childd= array_count_values($request->childs);
-        
-        $parent->no_male_child = $childd[1];
+        if(isset($childd[1])){
+            $parent->no_male_child = $childd[1];
+        }else{
+            $parent->no_male_child = 0;
+        }
+        if(isset($childd[2])){
+            $parent->no_female_child = $childd[2];
+        }else{
+            $parent->no_female_child = 0;
+        }
 
-        $parent->no_female_child = $childd[2];
+
+
 
         $parent->uid = "AVS_". $request->get('district')."_".strtoupper(uniqid());
 
@@ -115,24 +126,27 @@ class ParentController extends Controller
         $parent->save();
 
         $lastinsertid = $parent->id;
-       
+
         $c=count($request->cname);
-        if($c>0){
+
+        if($c>0 && $request->cname[0]!== NULL){
             for ($i=0; $i < $c ; $i++) {
-                $child = new Child;
-    
+
+                    $child = new Child;
+
                 $child->name=  $request->cname[$i];
-    
                 $child->date_of_birth = date("Y-m-d",strtotime($request->date_of_cbirth[$i]));
                 $child->education = $request->education[$i];
                 $child->marital_status = $request->marital_status[$i];
                 $child->relationship_id =$request->childs[$i];
                 $child->parent_id = $lastinsertid;
                 $child->save();
+
+
                 # code...
             }
         }
-        
+
 
        // echo $lastinsertid;
 
