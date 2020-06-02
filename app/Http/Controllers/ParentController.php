@@ -43,7 +43,6 @@ class ParentController extends Controller
      */
     public function store(Request $request)
     {
-
         // return  $request->all();
         $parent = new Parents;
     //   $lastinsertid=  $parent->create($request->all());
@@ -146,7 +145,6 @@ class ParentController extends Controller
                 # code...
             }
         }
-
 
        // echo $lastinsertid;
 
