@@ -22,7 +22,7 @@
         <link href="plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
         <link href="plugins/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
         <link href="plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">-->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css">
        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.bootstrap.min.css">
@@ -70,6 +70,7 @@
 
 <header id="topnav">
             <div class="topbar-main">
+
                 <div class="container-fluid">
 
                     <!-- Logo container-->
@@ -81,12 +82,14 @@
                         <!--</a>-->
                         <!-- Image Logo -->
 
-                        <a href="index.html" class="logo pull-left">
+                        <a href="{{ url('/') }}" class="logo pull-left">
+                            <img src="{{ url('images/logo1.jpeg') }}" height="100px" width="100px">
                             {{-- <img src="images/logo_sm.png" alt="" height="26" class="logo-small"> --}}
                             {{-- <img src="images/logo.png" alt="" height="126" class="logo-large pull-left"> --}}
 
                         </a>
                         <div class="pull-left htext">
+
                             <h4 class="logotext mt-3 heading"><x-sign>ஆறு நாட்டு வேளாளர் சங்கம் - திருச்சி மாநகர்</x-sign></h4>
                             <p class="small m-0 p-0 hidemob">அலுவலகம் : நெ. 1/10, ஸ்ரீனிவாசபுரம், ஸ்ருதி டவர்,<br>முதல் தளம், தென்னுர்,
                                 (ஹிந்தி பிரசார சபா எதிரில்), திருச்சி - 620  017. </p>
@@ -107,15 +110,11 @@
                                 <!--      <span><i class="ti-home"></i></span><span> Dashboard</span> </a>-->
                                 <!--</li>-->
 
-                                <!--<li class="has-submenu">-->
-                                <!--    <a href="index.html">-->
-                                <!--        <span><i class="ti-home"></i></span><span> Address Forms</span> </a>-->
-                                <!--          <ul class="submenu">-->
-                                <!--        <li><a href="pages-login.html">Add Address Form</a></li>-->
-                                <!--        <li><a href="pages-register.html">Manage Address Form</a></li>-->
 
-                                <!--    </ul>-->
-                                <!--</li>-->
+
+                                     <li style="margin-top:50px"><a class="" href="{{  url('lists') }} "><i class="ti-user  "></i> <span>View Members</span></a></li>
+
+                                    <!-- <li><a class=" p-20 m-b-5  " href="{{  url('lists') }} ">View List</a></li>-->
 
 <!--                                <li class="has-submenu">
                                     <a href="#"> <span><i class="ti-files"></i></span><span> Pages </span> </a>
@@ -215,11 +214,11 @@
                             </li>
 
                             <li class="dropdown notification-list">
-                                <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
+                               <!-- <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
                                    aria-haspopup="false" aria-expanded="false">
                                     <i class="mdi mdi-bell noti-icon"></i>
                                     <span class="badge badge-danger badge-pill noti-icon-badge">4</span>
-                                </a>
+                                </a>-->
                                 <div class="dropdown-menu dropdown-menu-right dropdown-lg">
 
                                     <!-- item-->
