@@ -269,10 +269,10 @@ class ParentController extends Controller
     public function edit($id)
     {
         $parents= Parents::find($id);
-        $child = Child::find($id);
-       // dd($child);exit;
-        return view('edit',['parents'=>$parents],['child'=>$child]);
-        //
+       $childs= $parents->childs;
+
+        return view('edit',['parents'=>$parents,'childs'=>$childs]);
+
     }
 
     /**

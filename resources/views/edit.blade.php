@@ -320,8 +320,49 @@
 
                             </div>
 
-                                <div class="col-12">
+                            <div id="dynamic" style="width: 100%">
+                                        <table id="example" class="table table-striped table-bordered" style="width:100%">
 
+                                            <thead>
+                                                <th>S.No</th>
+                                                <th>Name</th>
+                                                <th>Date Of Birth</th>
+                                                <th>Education</th>
+                                                <th>Marital Status</th>
+
+                                                <th>Edit</th>
+
+                                            </thead>
+                                            <tbody>
+                                                @php
+                                                 $i=1;
+                                                @endphp
+                                               @foreach ($childs as $child)
+                                                <tr>
+                                                    <td>{{ $i }}</td>
+                                                    <td>{{ $child->name }}</td>
+                                                    <td>{{ $child->date_of_birth }}</td>
+                                                    <td>{{ $child->education }}</td>
+                                                    <td>{{ $child->marital_status }}</td>
+
+                                                    <td><a href="{{ route('parents.edit',['id'=>$child->id]) }}">Edit</a></td>
+
+
+                                                </tr>
+                                                @php
+                                                 $i++;
+                                                @endphp
+
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+
+                                    @foreach ($childs as $child)
+                                        {{$child->name}}
+                                    @endforeach
 
 
                            </div>
