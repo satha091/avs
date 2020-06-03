@@ -6,21 +6,25 @@
 
                 <div class="row">
                     <div class="col-sm-12 card-header" style="background-color:#820101;">
-                        <h4 class="header-title mt-3 m-b-20 text-white">Update Address Form / புதிய முகவரி மலர்</h4>
+                        <h4 class="header-title mt-3 m-b-20 text-white">Update Address Form /  முகவரி மலர்</h4>
                     </div>
-{{--
-                    @if(session()->has('uid'))
-                    <div class="col-12 m-1">
+
+                    @if(session()->has('success'))
+                    <div class="alert alert-success">
+                        {{ session()->get('success') }}
+                    </div>
+
+                    {{-- <div class="col-12 m-1">
                     <div class="alert alert-success alert-dismissible" id="mes" style="margin-top:20px;">
 
                     <button type="button" class="close" data-dismiss="alert" onclick="javascript:document.getElementById('mes').style.display = 'none';">x</button>
-                    You have successfully created address form. Your id is <b>{{ session()->get('uid') }}</b>
+                    You have successfully Updated Parents form. Your id is
 
 
 
                     </div>
-                </div>
-                    @endif --}}
+                </div>--}}
+                    @endif
 
                     {{-- @if (session()->has('success'))
                     <div class="col-12 m-2">
@@ -88,43 +92,49 @@
 
                             <select onchange="get_district_announcements(this.value)" class="form-control form-select" id="district_wise" name="district">
                                 <option value="">Select</option>
-                                <option value="ARI">Ariyalur</option>
-                                <option value="CHE">Chennai</option>
-                                <option value="COI">Coimbatore</option>
-                                <option value="CUD">Cuddalore</option>
-                                <option value="DHA">Dharmapuri</option>
-                                <option value="DGL">Dindigul</option>
-                                <option value="ERD">Erode</option>
-                                <option value="KANC">Kancheepuram</option>
-                                <option value="KANY">Kanyakumari</option>
-                                <option value="KAR">Karur</option>
-                                <option value="KRI">Krishnagiri</option>
-                                <option value="MAD">Madurai</option>
-                                <option value="NAG">Nagapattinam</option>
-                                <option value="NAM">Namakkal</option>
-                                <option value="PER">Perambalur</option>
-                                <option value="PUD">Pudukottai</option>
-                                <option value="RAM">Ramanathapuram</option>
-                                <option value="SLM">Salem</option>
-                                <option value="SVG">Sivagangai</option>
-                                <option value="THAN">Thanjavur</option>
-                                <option value="NIL">The Nilgiris</option>
-                                <option value="THE">Theni</option>
-                                <option value="TVR">Thiruvallur</option>
-                                <option value="TVI">Thiruvannamalai</option>
-                                <option value="TVR">Thiruvarur</option>
-                                <option value="TNI">Thirunelveli</option>
-                                <option value="TRI">Trichirappalli</option>
-                                <option value="TPR">Tiruppur</option>
-                                <option value="TUT">Tuticorin</option>
-                                <option value="VEL">Vellore</option>
-                                <option value="VIL">Viluppuram</option>
-                                <option value="VIR">Virudhunagar</option>
-                                <option value="TEN">Tenkasi</option>
-                                <option value="KAL">Kallakurichi</option>
-                                <option value="CGT">Chengalpet</option>
-                                <option value="TPR">Tirupattur</option>
-                                <option value="RAN">Ranipet</option></select>
+                                <option {{ $parents->district == "ARI" ? 'selected':'' }}>Ariyalur</option>
+                                <option {{ $parents->district == "CHE" ? 'selected':'' }}>Chennai</option>
+                                <option {{ $parents->district == "COI" ? 'selected':'' }}>Coimbatore</option>
+                                <option {{ $parents->district == "CUD" ? 'selected':'' }}>Cuddalore</option>
+                                <option {{ $parents->district == "DHA" ? 'selected':'' }}>Dharmapuri</option>
+                                <option {{ $parents->district == "DGL" ? 'selected':'' }}>Dindigul</option>
+                                <option {{ $parents->district == "ERD" ? 'selected':'' }}>Erode</option>
+                                <option {{ $parents->district == "KANC" ? 'selected':'' }}>Kancheepuram</option>
+                                <option {{ $parents->district == "KANY" ? 'selected':'' }}>Kanyakumari</option>
+                                <option {{ $parents->district == "KAR" ? 'selected':'' }}>Karur</option>
+                                <option {{ $parents->district == "KRI" ? 'selected':'' }}>Krishnagiri</option>
+                                <option {{ $parents->district == "MAD" ? 'selected':'' }}>Madurai</option>
+
+                                <option {{ $parents->district == "NAG" ? 'selected':'' }}>Nagapattinam</option>
+                                <option {{ $parents->district == "NAM" ? 'selected':'' }}>Namakkal</option>
+                                <option {{ $parents->district == "PER" ? 'selected':'' }}>Perambalur</option>
+                                <option {{ $parents->district == "PUD" ? 'selected':'' }}>Pudukottai</option>
+                                <option {{ $parents->district == "RAM" ? 'selected':'' }}>Ramanathapuram</option>
+                                <option {{ $parents->district == "SLM" ? 'selected':'' }}>Salem</option>
+                                <option {{ $parents->district == "SVG" ? 'selected':'' }}>Sivagangai</option>
+
+                                <option {{ $parents->district == "THAN" ? 'selected':'' }}>Thanjavur</option>
+                                <option {{ $parents->district == "NIL" ? 'selected':'' }}>Nilgiris</option>
+                                <option {{ $parents->district == "THE" ? 'selected':'' }}>Theni</option>
+                                <option {{ $parents->district == "TVR" ? 'selected':'' }}>Thiruvallur</option>
+                                <option {{ $parents->district == "TVI" ? 'selected':'' }}>Thiruvannamalai</option>
+                                <option {{ $parents->district == "TVR" ? 'selected':'' }}>Thiruvarur</option>
+                                <option {{ $parents->district == "TNI" ? 'selected':'' }}>Thirunelveli</option>
+
+                                <option {{ $parents->district == "TRI" ? 'selected':'' }}>Trichirappalli</option>
+                                <option {{ $parents->district == "TPR" ? 'selected':'' }}>Tiruppur</option>
+                                <option {{ $parents->district == "TUT" ? 'selected':'' }}>Tuticorin</option>
+                                <option {{ $parents->district == "VEL" ? 'selected':'' }}>Vellore</option>
+                                <option {{ $parents->district == "VIL" ? 'selected':'' }}>Viluppuram</option>
+                                <option {{ $parents->district == "VIR" ? 'selected':'' }}>Virudhunagar</option>
+                                <option {{ $parents->district == "TEN" ? 'selected':'' }}>Tenkasi</option>
+
+                                <option {{ $parents->district == "KAL" ? 'selected':'' }}>Kallakurichi</option>
+                                <option {{ $parents->district == "CGT" ? 'selected':'' }}>Chengalpet</option>
+                                <option {{ $parents->district == "TPR" ? 'selected':'' }}>Tirupattur</option>
+                                <option {{ $parents->district == "RAN" ? 'selected':'' }}>Ranipet</option>
+
+                            </select>
                             </div>
 
 
@@ -165,7 +175,7 @@
 
                             </div>
                             <div class="form-group">
-                                <label for="company_email">Email Id / மின்னஞ்சல் </label><span class="text-danger">*</span>
+                                <label for="company_email">Company Email Id / மின்னஞ்சல் </label><span class="text-danger">*</span>
 
                                 <input type="email" name="company_email" class="form-control tamil " value="{{$parents->company_email}}" placeholder="மின்னஞ்சல்" required>
 
@@ -222,18 +232,18 @@
                         <div class="form-group">
                             <label for="cellno">Cell / செல் </label><span class="text-danger">*</span>
 
-                            <input type="number" name="cellno" class="form-control tamil " value="{{$parents->cellno}}" placeholder="செல்" required>
+                            <input type="text" name="cell_no" class="form-control tamil " value="{{$parents->cell_no}}" placeholder="செல்" required>
 
                         </div>
                         <div class="form-group">
                             <label for="natchatram">Job Type / பணி புரியும் வகைகள்</label><span class="text-danger">*</span>
 
-                             <select name="job_details" id="job_details"  class="form-control select2 tamil" required>
-                                                            <option value="">Select</option>
-                                                            <option value="1">Business</option>
-                                                            <option value="2">Agriculture</option>
-                                                            <option value="3">Job</option>
 
+                                <select class ="form-control select2 tamil" id="job_details" name="job_details">
+                                    <option value="">Select</option>
+                                    <option {{ $parents->job_details == 1 ? 'selected':'' }}>Business</option>
+                                    <option {{ $parents->job_details == 2 ? 'selected':'' }}>Agriculture</option>
+                                    <option {{ $parents->job_details == 3 ? 'selected':'' }}>Job</option>
 
                                 </select>
 
@@ -257,16 +267,16 @@
 
 
                             <div class="form-group">
-                                <label for="company_cellno">Cell / செல் </label><span class="text-danger">*</span>
+                                <label for="company_cellno">Company Cell / செல் </label><span class="text-danger">*</span>
 
-                                <input type="number" name="company_cellno" class="form-control tamil " value="{{$parents->company_cellno}}" placeholder="செல்" required>
+                                <input type="text" name="company_cell_no" class="form-control tamil " value="{{$parents->company_cell_no}}" placeholder="செல்" required>
 
                             </div>
 
                             <div class="form-group">
                                 <label for="company_cellno">Qualification / தனிதகுதி </label>
 
-                                <input type="number" name="qualification" class="form-control tamil " value="{{$parents->qualification}}" placeholder=" தனிதகுதி" >
+                                <input type="text" name="qualification" class="form-control tamil " value="{{$parents->qualification}}" placeholder=" தனிதகுதி" >
 
                             </div>
 

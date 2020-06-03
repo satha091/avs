@@ -314,7 +314,7 @@ class ParentController extends Controller
 
         $parents->telephone = $request->telephone;
 
-        $parents->cell_no = $request->cellno;
+        $parents->cell_no = $request->cell_no;
 
         $parents->email = $request->email;
 
@@ -330,7 +330,7 @@ class ParentController extends Controller
 
         $parents->company_telephone = $request->company_telephone;
 
-        $parents->company_cell_no = $request->company_cellno;
+        $parents->company_cell_no = $request->company_cell_no;
 
         $parents->company_email = $request->company_email;
 
@@ -363,7 +363,7 @@ class ParentController extends Controller
         $parents->updated_by = 1;
 
         $parents->save();
-return redirect()->back();
+return redirect()->back()->with('success','You have successfully Updated Parent Details');
        // $lastinsertid = $parents->id;
 
 
