@@ -9,6 +9,7 @@
         <thead>
             <th>S.No</th>
             <th>Name</th>
+            <th>Registration Id</th>
             <th>Father Name</th>
             <th>DOB</th>
             <th>Age</th>
@@ -16,12 +17,13 @@
             <th>Address</th>
             <th>Telephone</th>
             <th>Job</th>
-            <th>Qualification</th>
+            {{-- <th>Qualification</th> --}}
             <th>Wife Name</th>
             <th>No Male Child</th>
             <th>No Female Child</th>
             {{-- <th>Action</th> --}}
             <th>Edit</th>
+
         </thead>
         <tbody>
             @php
@@ -31,6 +33,7 @@
             <tr>
                 <td>{{ $i }}</td>
                 <td>{{ $list->name }}</td>
+                <td>{{ $list->uid }}</td>
                 <td>{{ $list->father_name }}</td>
                 <td>{{ $list->date_of_birth }}</td>
                 <td>{{ $list->age }}</td>
@@ -38,13 +41,14 @@
                 <td>{{ $list->address }}</td>
                 <td>{{ $list->telephone }}</td>
                 <td>{{ $list->job_details }}</td>
-                <td>{{ $list->qualification }}</td>
+                {{-- <td>{{ $list->qualification }}</td> --}}
                 <td>{{ $list->wife_name }}</td>
                 <td>{{ $list->no_male_child }}</td>
                 <td>{{ $list->no_female_child }}</td>
                 {{-- <td><a href="">Show Details</a></td> --}}
                <!-- <td><a href="{{ url('parents/1/edit') }}">Edit</a></td>-->
                 <td><a href="{{ route('parents.edit',['id'=>$list->id]) }}">Edit</a></td>
+
 
             </tr>
             @php

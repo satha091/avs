@@ -563,6 +563,7 @@
                                     <div class="form-group col-12 text-center mt-5 justify-content-center">
                                         <button type="submit" class="btn btn-red center-page">சமர்ப்பி</button>
                                         <button type="submit" class="btn btn-red">மறு சீரமை</button>
+                                        <button type="submit" class="btn btn-red"><a href="{{ url()->previous() }}" style="color: white">Back</a></button>
                                    </div>
                               </div>
                            </div>

@@ -269,7 +269,9 @@ class ParentController extends Controller
     public function edit($id)
     {
         $parents= Parents::find($id);
-        return view('edit',['parents'=>$parents]);
+        $child = Child::find($id);
+       // dd($child);exit;
+        return view('edit',['parents'=>$parents],['child'=>$child]);
         //
     }
 
@@ -283,86 +285,102 @@ class ParentController extends Controller
     public function update(Request $request, $id)
     {
        // $parent = new Parents;
-         $parents= Parents::find($id);
-        // dd($parents);exit;
-       $parents->name = $request->name;
+       if($request->hasFile('photo'))
+         {
+           // $rdata=$request->all();
 
-       $parents->father_name = $request->father_name;
 
-        $parents->date_of_birth =$request->date_of_birth;
-
-        $parents->age = $request->age;
-
-        $parents->blood_group = $request->blood_group;
-
-        if($request->hasFile('photo'))
-        {
-
-        $imagename = time().'.'.$request->photo->getClientOriginalExtension();
-        $parents->photo = $imagename;
+         $imagename = time().'.'.$request->photo->getClientOriginalExtension();
         $request->photo->move(public_path('images'), $imagename);
-        }
 
-        $parents->native_place = $request->native_place;
+        $parents= Parents::find($id)->update($request->except(['photo']));
+        $parents= Parents::find($id)->update(['photo'=>$imagename]);
 
-        $parents->district = $request->district;
+         }else{
+            $parents= Parents::find($id)->update($request->all());
+         }
 
+       //  dd($parents);exit;
+        //return $request;
+        // dd($parents);exit;
+    //    $parents->name = $request->name;
 
-        $parents->ancestry = $request->ancestry;
+    //    $parents->father_name = $request->father_name;
 
-        $parents->address = $request->address;
+    //     $parents->date_of_birth =$request->date_of_birth;
 
-        $parents->telephone = $request->telephone;
+    //     $parents->age = $request->age;
 
-        $parents->cell_no = $request->cell_no;
+    //     $parents->blood_group = $request->blood_group;
 
-        $parents->email = $request->email;
+    //    if($request->hasFile('photo'))
+    //     {
 
-        $parents->job_details = $request->job_details;
+    //     $imagename = time().'.'.$request->photo->getClientOriginalExtension();
+    //     $parents->photo = $imagename;
+    //     $request->photo->move(public_path('images'), $imagename);
+    //     }
 
-        $parents->job_description = $request->job_description;
+    //     $parents->native_place = $request->native_place;
 
-        $parents->designation = $request->designation;
-
-        $parents->company_name = $request->company_name;
-
-        $parents->company_address = $request->address;
-
-        $parents->company_telephone = $request->company_telephone;
-
-        $parents->company_cell_no = $request->company_cell_no;
-
-        $parents->company_email = $request->company_email;
-
-        $parents->qualification = $request->qualification;
-
-        $parents->wife_name = $request->wife_name;
-
-        $parents->wife_native_place = $request->wife_native_place;
-
-        $parents->wife_ancestry = $request->wife_ancestry;
-        // $childd= array_count_values($request->childs);
-        // if(isset($childd[1])){
-        //     $parents->no_male_child = $childd[1];
-        // }else{
-        //     $parents->no_male_child = 0;
-        // }
-        // if(isset($childd[2])){
-        //     $parents->no_female_child = $childd[2];
-        // }else{
-        //     $parents->no_female_child = 0;
-        // }
+    //     $parents->district = $request->district;
 
 
+    //     $parents->ancestry = $request->ancestry;
+
+    //     $parents->address = $request->address;
+
+    //     $parents->telephone = $request->telephone;
+
+    //     $parents->cell_no = $request->cell_no;
+
+    //     $parents->email = $request->email;
+
+    //     $parents->job_details = $request->job_details;
+
+    //     $parents->job_description = $request->job_description;
+
+    //     $parents->designation = $request->designation;
+
+    //     $parents->company_name = $request->company_name;
+
+    //     $parents->company_address = $request->address;
+
+    //     $parents->company_telephone = $request->company_telephone;
+
+    //     $parents->company_cell_no = $request->company_cell_no;
+
+    //     $parents->company_email = $request->company_email;
+
+    //     $parents->qualification = $request->qualification;
+
+    //     $parents->wife_name = $request->wife_name;
+
+    //     $parents->wife_native_place = $request->wife_native_place;
+
+    //     $parents->wife_ancestry = $request->wife_ancestry;
+    //     $childd= array_count_values($request->childs);
+    //     if(isset($childd[1])){
+    //         $parents->no_male_child = $childd[1];
+    //     }else{
+    //         $parents->no_male_child = 0;
+    //     }
+    //     if(isset($childd[2])){
+    //         $parents->no_female_child = $childd[2];
+    //     }else{
+    //         $parents->no_female_child = 0;
+    //     }
 
 
-        $parents->uid = "AVS_". $request->district."_".strtoupper(uniqid());
 
-        $parents->created_by = 1;
 
-        $parents->updated_by = 1;
+    //     $parents->uid = "AVS_". $request->district."_".strtoupper(uniqid());
 
-        $parents->save();
+    //     $parents->created_by = 1;
+
+    //     $parents->updated_by = 1;
+
+    //     $parents->save();
 return redirect()->back()->with('success','You have successfully Updated Parent Details');
        // $lastinsertid = $parents->id;
 
