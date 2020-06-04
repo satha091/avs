@@ -12,8 +12,8 @@
         <link rel="shortcut icon" href="{{url('images/favicon.ico')}}">
 
         <!-- Plugins css-->
-         <link href='plugins/jquery-ui/jquery-ui.min.css' rel='stylesheet' type='text/css'>
-        <script src='plugins/jquery-ui/jquery-ui.min.js' type='text/javascript'></script>
+         <link href="{{ url('plugins/jquery-ui/jquery-ui.min.css')}}" rel='stylesheet' type='text/css'>
+          {{-- <script src="{{url('plugins/jquery-ui/jquery-ui.min.js')}}" type='text/javascript'></script> --}}
         <link href="{{ url('plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css')}}" rel="stylesheet" />
         <link rel="stylesheet" href="{{ url('plugins/switchery/switchery.min.css')}}">
         <link href="{{ url('plugins/select2/css/select2.min.css')}}" rel="stylesheet" type="text/css" />
@@ -22,11 +22,11 @@
         <link href="{{ url('plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css')}}" rel="stylesheet">
         <link href="{{ url('plugins/clockpicker/css/bootstrap-clockpicker.min.css')}}" rel="stylesheet">
         <link href="{{ url('plugins/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href=" https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
+        {{-- <link rel="stylesheet" type="text/css" href=" https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css"> --}}
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css">
        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.bootstrap.min.css">
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        {{-- <script src="{{url('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script> --}}
         <!-- Summernote css -->
         <link href="{{ url('plugins/summernote/summernote-bs4.css')}}" rel="stylesheet" />
 

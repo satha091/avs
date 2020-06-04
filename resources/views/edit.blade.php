@@ -360,9 +360,9 @@
                                     </div>
 
 
-                                    @foreach ($childs as $child)
+                                    {{-- @foreach ($childs as $child)
                                         {{$child->name}}
-                                    @endforeach
+                                    @endforeach --}}
 
 
                            </div>
